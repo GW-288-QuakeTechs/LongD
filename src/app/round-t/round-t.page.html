@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button color="primary" [routerLink]="['/one-dub']">OneDub</ion-button>
+    </ion-buttons>
+    <ion-title>
+      ROUNDT
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary">RoundT</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let trip of displayedTrips">
+      <div class="thumbnail-container">
+        <!-- Thumbnail images here -->
+      </div>
+      <ion-label>
+        <h2>{{ trip.driver }}</h2>
+        <p>{{ trip.destination }}</p>
+        <p>{{ trip.departurePlace }}</p>
+        <p>{{ trip.departureTime }}</p>
+        <p [ngClass]="{ 'red-text': trip.layover }">{{ trip.layover }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

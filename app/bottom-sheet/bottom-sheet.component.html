@@ -1,0 +1,243 @@
+<ion-header class="bottom-sheet-content">
+  <ion-toolbar>
+    <div class="top">
+      <div class="hr"></div>
+      <div class="seg">
+        <ion-segment mode="ios" value="segment1" (ionChange)="onChange($event)">
+          <ion-segment-button value="segment1">
+            <ion-label>OneDub</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="segment2">
+            <ion-label>RoundT</ion-label>
+          </ion-segment-button>
+          <!-- Add more segment buttons if needed -->
+        </ion-segment>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bottom-sheet-content">
+
+  <ng-container *ngIf="selectedSegment === 'segment1'">
+    <ion-row class="ion-justify-content center">
+      <ion-card *ngFor="let driver of trips">
+        <ion-row style="height: 100%;">
+          <ion-col size="2">
+            <img style="object-fit: cover;" height="100%" src="{{driver.car}}">
+          </ion-col>
+          <ion-col style="padding: 8px 8px 4px 8px;" size="10">
+            <ion-row class="ion-justify-content-between">
+
+              <div class="head">{{driver.fname}} {{driver.lname}} </div>
+              <div>{{driver.trips}} Trips {{driver.rating}}/5 <span class="star">&#9733;</span> </div>
+
+            </ion-row>
+
+            <ion-row>
+              <ion-col size="9">
+                <ion-row class="amenities">
+                  <img *ngIf="driver.wifi" src="assets/w-icon.png" alt="WiFi">
+
+                  <img *ngIf="driver.pets" src="assets/pet-friendly-icon.png" alt="Pet Friendly">
+
+                  <img *ngIf="driver.roofrack" src="assets/rack-icon.png" alt="roof-rack">
+                  <img *ngIf="driver.ac" src="assets/ac-icon.png" alt="AC">
+                  <img *ngIf="driver.luggage" src="assets/l-icon.png" alt="Luggage">
+
+
+                  <img *ngIf="driver.tv" src="assets/tv-icon.png" alt="TV">
+
+
+                </ion-row>
+
+                <ion-row class="date ">
+                  <span style="margin-right: 0.5rem;">
+                    <ion-icon name="calendar-clear-outline"></ion-icon>
+
+                  </span>
+                  <div>{{driver.date}} {{driver.time}} Departure</div>
+                </ion-row>
+
+                <ion-row class="depart">
+                  <span style="margin-right: 0.5rem;">
+                    <ion-icon name="location-outline"></ion-icon>
+
+                  </span>
+                  <div>{{driver.start}} - {{driver.destination}}</div>
+
+                </ion-row>
+
+              </ion-col>
+
+              <ion-col class="whip ion-align-items-center" size="3">
+
+                <ion-button style="--background: antiquewhite;">
+                  <span style="display: flex; justify-content: space-between; width: 100%;">
+                    <ion-icon style="font-size: 12px;" name="car-outline"></ion-icon>
+                    <div>{{driver.fuel}}</div>
+                  </span>
+                </ion-button>
+                <ion-button (click)="book('one')" style="--background: navy; --color:white; ">
+                  Book Trip
+                </ion-button>
+              </ion-col>
+            </ion-row>
+            <ion-row class="pax">
+
+              <span (click)="setSeats(1)" class="person-icon" id="seat-1">
+                <ion-icon name="person"></ion-icon>
+              </span>
+              <div class="vl"></div>
+              <span (click)="setSeats(2)" style="margin-left: 0.5rem;" class="person-icon" id="seat-2">
+                <ion-icon name="person"></ion-icon>
+              </span>
+              <span (click)="setSeats(3)" class="person-icon" id="seat-3">
+                <ion-icon name="person"></ion-icon>
+              </span>
+              <span (click)="setSeats(4)" class="person-icon" id="seat-4">
+                <ion-icon name="person"></ion-icon>
+              </span>
+              <div class="vl"></div>
+
+              <span (click)="setSeats(5)" style="margin-left: 0.5rem;" class="person-icon" id="seat-5">
+                <ion-icon name="person"></ion-icon>
+              </span>
+              <span (click)="setSeats(6)" class="person-icon" id="seat-6">
+                <ion-icon name="person"></ion-icon>
+              </span>
+              <span (click)="setSeats(7)" class="person-icon" id="seat-7">
+                <ion-icon name="person"></ion-icon>
+              </span>
+              <div class="vl"></div>
+
+            </ion-row>
+          </ion-col>
+        </ion-row>
+
+
+      </ion-card>
+    </ion-row>
+  </ng-container>
+
+  <ng-container *ngIf="selectedSegment === 'segment2'">
+    <ion-card *ngFor="let trip of roundTrips">
+      <ion-row style="padding: 8px;">
+        <ion-col style="display: flex; flex-direction: column;" class="ion-align-items-center" size="2">
+          <div style="margin-top: 0.5rem;" class="start">
+            <ion-icon name="locate-outline"></ion-icon>
+          </div>
+
+          <div class="vl2"></div>
+          <div class="finish">
+            <ion-icon name="location-outline"></ion-icon>
+          </div>
+
+          <div style="margin-top: 72px;" class="finish">
+            <ion-icon name="location-outline"></ion-icon>
+          </div>
+          <div class="vl2"></div>
+          <div class="start">
+            <ion-icon name="locate-outline"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="8">
+          <ion-row class="ion-justify-content-start">
+            <ion-col>
+              <div class="header">Pickup Location</div>
+              <div class="tag">{{trip.sTime1}} {{trip.airport1}}, {{trip.start}}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div class="header">Dropoff Location</div>
+              <div class="tag">{{trip.dTime1}} {{trip.airport2}}, {{trip.destination}}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div class="layover"> {{trip.layover}} Hours layover</div>
+              <ion-row class="amenities">
+                <img src="assets/w-icon.png" alt="WiFi">
+                <img src="assets/pet-friendly-icon.png" alt="Pet Friendly">
+                <img src="assets/rack-icon.png" alt="roof-rack">
+                <img src="assets/ac-icon.png" alt="AC">
+                <img src="assets/l-icon.png" alt="Luggage">
+                <img src="assets/tv-icon.png" alt="TV">
+              </ion-row>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div class="header">Pickup Location</div>
+              <div class="tag">{{trip.sTime2}} {{trip.airport2}}, {{trip.destination}}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div class="header">Dropoff Location</div>
+              <div class="tag">{{trip.dTime2}} {{trip.airport1}}, {{trip.start}}</div>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col style="display: flex; flex-direction: column; gap:3vh;"
+          class="ion-align-items-center ion-justify-content-center" size="2">
+          <div class="avi">
+            <img src="{{trip.pic}}">
+
+          </div>
+          <div class="avi">
+            <img src="{{trip.carPic}}">
+
+          </div>
+          <div (click)="book('round')" class="avi2">
+            <ion-icon name="add-outline"></ion-icon>
+
+          </div>
+
+
+
+        </ion-col>
+
+      </ion-row>
+      <div class="footy seat-icons">
+        <ion-row style="width: 100%;" class="pax">
+
+          <span (click)="setSeats(1)" class="person-icon" id="seat-1">
+            <ion-icon name="person"></ion-icon>
+          </span>
+          <div class="vl"></div>
+          <span (click)="setSeats(2)" style="margin-left: 0.5rem;" class="person-icon" id="seat-2">
+            <ion-icon name="person"></ion-icon>
+          </span>
+          <span (click)="setSeats(3)" class="person-icon" id="seat-3">
+            <ion-icon name="person"></ion-icon>
+          </span>
+          <span (click)="setSeats(4)" class="person-icon" id="seat-4">
+            <ion-icon name="person"></ion-icon>
+          </span>
+          <div class="vl"></div>
+
+          <span (click)="setSeats(5)" style="margin-left: 0.5rem;" class="person-icon" id="seat-5">
+            <ion-icon name="person"></ion-icon>
+          </span>
+          <span (click)="setSeats(6)" class="person-icon" id="seat-6">
+            <ion-icon name="person"></ion-icon>
+          </span>
+          <span (click)="setSeats(7)" class="person-icon" id="seat-7">
+            <ion-icon name="person"></ion-icon>
+          </span>
+          <div class="vl"></div>
+
+        </ion-row>
+        <ion-row>
+          <span style="margin-right: 0.2rem;">
+            <ion-icon name="calendar-clear-outline"></ion-icon>
+
+          </span>
+          <div style="font-weight: 800;">{{trip.date}} {{trip.sTime1}} Departure</div>
+        </ion-row>
+      </div>
+    </ion-card>
+  </ng-container>
+</ion-content>

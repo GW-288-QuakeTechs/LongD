@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      PROFILE
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/settings/']">
+        <ion-icon name="settings"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="log-out">Log Out</ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <div class="profile-header">
+    <ion-avatar>
+      <img src="assets/pic.jpg">
+    </ion-avatar>
+    <h1>John Doe</h1>
+    <p class="location">Chicago, IL</p>
+    <p >(123) 456-7890</p>
+  </div>
+
+  <ion-list class="profile-info">
+    <ion-item>
+      <ion-label>Date of Birth</ion-label>
+      <p class="value">01/01/1990</p>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date Joined</ion-label>
+      <p class="value">01/01/2018</p>
+    </ion-item>
+    <ion-item>
+      <ion-label>Trips</ion-label>
+      <p class="value">100</p>
+    </ion-item>
+    <ion-item>
+      <ion-label>Rating</ion-label>
+      <ion-icon name="star" *ngFor="let i of [1,2,3,4,5]" [color]="i<=4.7 ? 'primary' : 'medium'"></ion-icon>
+      <p class="rating-value">4.7</p>
+    </ion-item>
+    <ion-item>
+      <ion-label>Home Address</ion-label>
+      <p class="rating-value"></p>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" color ="secondary" [routerLink]="['/profile2/']">Edit Profile</ion-button>
+</ion-content>

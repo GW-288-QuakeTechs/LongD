@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button>OneDub</ion-button>
+    </ion-buttons>
+    <ion-title>
+      ONEDUB
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/round-t']">RoundT</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let trip of displayedTrips">
+      <ion-thumbnail slot="start">
+        <img *ngIf="trip.icon !== 'car'" [src]="'assets/icons/' + trip.icon + '.svg'" alt="Car Icon">
+        <img *ngIf="trip.icon === 'car'" src="assets/icon2.png" alt="Car">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ trip.driver }}</h2>
+        <p>{{ trip.destination }}</p>
+        <p>{{ trip.departurePlace }}</p>
+        <p>{{ trip.departureTime }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

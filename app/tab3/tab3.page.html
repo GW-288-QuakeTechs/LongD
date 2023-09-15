@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      CHAT
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-segment [(ngModel)]="selectedRoom">
+        <ion-segment-button value="support">
+          Support
+        </ion-segment-button>
+        <ion-segment-button value="driver">
+          Driver
+        </ion-segment-button>
+      </ion-segment>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <div class="chat-header">
+    <img class="profile-pic" [src]="currentUser.profilePicUrl">
+    <div class="name-and-number">
+      <div>{{currentUser.name}}</div>
+      <div>{{currentUser.phoneNumber}}</div>
+    </div>
+  </div>
+
+  <ion-list class="chat-list">
+    <ng-container *ngFor="let message of currentRoom.messages">
+      <ion-item [class.sent]="message.sender === currentUser.phoneNumber" [class.received]="message.sender !== currentUser.phoneNumber">
+        <ion-label class="message-text">{{message.text}}</ion-label>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input [(ngModel)]="newMessage"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-2>
+        <ion-button expand="block" (click)="sendMessage()" color="secondary">Send</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
