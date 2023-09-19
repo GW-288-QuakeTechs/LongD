@@ -14,6 +14,19 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
+
+  {
+    path: 'signupa',
+    loadChildren: () => import('./signupa/signupa.module').then( m => m.SignupaPageModule)
+  },
+  {
+    path: 'signupr',
+    loadChildren: () => import('./signupr/signupr.module').then( m => m.SignuprPageModule)
+  },
+  {
+    path: 'signupd',
+    loadChildren: () => import('./signupd/signupd.module').then( m => m.SignupdPageModule)
+  },
   {
     path: 'signup',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)

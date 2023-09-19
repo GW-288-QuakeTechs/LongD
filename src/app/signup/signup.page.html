@@ -28,7 +28,14 @@
       <ion-input type="password" required></ion-input>
     </ion-item>
 
-
+    <ion-item>
+      <ion-label>Sign up as</ion-label>
+      <ion-select>
+        <ion-select-option value="rider" [routerLink]="['/signupr']">Rider</ion-select-option>
+        <ion-select-option value="driver" [routerLink]="['/signupd']">Driver</ion-select-option>
+        <ion-select-option value="admin" [routerLink]="['/signupa']">Administration</ion-select-option>
+      </ion-select>
+    </ion-item>
   </form>
 
   <ion-item>
@@ -37,6 +44,6 @@
   </ion-item>
   <p>&nbsp;</p>
 
-  <ion-button expand="block" color="secondary" [routerLink]="['/tabs/tab1/']">Sign Up</ion-button>
+  <ion-button expand="block" color="secondary" [routerLink]="['/signupa']">Sign Up</ion-button>
   <p class="already-have-account">Already have an account? Click here to Sign In</p>
 </ion-content>
