@@ -1,21 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { BottomSheetComponent } from './bottom-sheet.component';
+import { NewTripComponent } from './new-trip.component';
 
-
-describe('BottomSheetComponent', () => {
-  let component: BottomSheetComponent;
-  let fixture: ComponentFixture<BottomSheetComponent>;
-
+describe('NewTripComponent', () => {
+  let component: NewTripComponent;
+  let fixture: ComponentFixture<NewTripComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ BottomSheetComponent ],
+      declarations: [ NewTripComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(BottomSheetComponent);
+    fixture = TestBed.createComponent(NewTripComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

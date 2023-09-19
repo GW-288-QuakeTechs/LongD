@@ -59,7 +59,7 @@ const routes: Routes = [
   {
     path: 'round-t',
     loadChildren: () => import('./round-t/round-t.module').then( m => m.RoundTPageModule)
-  }
+  },
 ];
 @NgModule({
   imports: [
