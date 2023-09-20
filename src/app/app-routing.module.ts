@@ -47,10 +47,14 @@ const routes: Routes = [
     path: 'round-t',
     loadChildren: () => import('./round-t/round-t.module').then( m => m.RoundTPageModule)
   },
+<<<<<<< Updated upstream
   {
     path: 'set',
     loadChildren: () => import('./set/set.module').then( m => m.SetPageModule)
   }
+=======
+
+>>>>>>> Stashed changes
 ];
 @NgModule({
   imports: [
