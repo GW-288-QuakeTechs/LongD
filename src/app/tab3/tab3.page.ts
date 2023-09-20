@@ -6,13 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-  selectedRoom = 'support'; // default room selected
-
+  selectedRoom = 'support'; 
   currentUser = {
-    name: 'John Doe',
+    name: 'Dianne J',
+    location:'Chicago',
     phoneNumber: '+1 123-456-7890',
-    profilePicUrl: 'assets/profile-pic.png',
-  }; // current user information
+    profilePicUrl: 'assets/d30-pic.png',
+    dob: '01/01/1990',
+    joinedDate:'JOINED 06/01/2023'
+  }; 
+
+ 
+  newQuickReply: string = '';
+  quickReplies: string[] = [
+    'Can we Shorten Layover',
+    'Can we Extend Layover',
+    'I cant find you',
+    'Running Late',
+    ' ',
+  ];
+   selectQuickReply(reply: string) {
+    this.newMessage = reply;
+  }
 
   supportRoom = {
     name: 'Support',
@@ -30,8 +45,7 @@ export class Tab3Page {
         sender: '+1 555-555-5555',
       },
     ],
-  }; // chat history for support room
-
+  }; 
   driverRoom = {
     name: 'Driver',
     messages: [
@@ -48,13 +62,13 @@ export class Tab3Page {
         sender: this.currentUser.phoneNumber,
       },
     ],
-  }; // chat history for driver room
+  }; 
 
   get currentRoom() {
     return this.selectedRoom === 'support' ? this.supportRoom : this.driverRoom;
-  } // get the chat history for the currently selected room
+  } 
 
-  newMessage = ''; // message input field
+  newMessage = '';
 
   sendMessage() {
     if (this.newMessage.trim() !== '') {
@@ -64,7 +78,7 @@ export class Tab3Page {
       });
       this.newMessage = '';
     }
-  } // add a new message to the current chat room
+  }
 
   constructor() {}
 }

@@ -1,91 +1,149 @@
 ion-content {
-  height: calc(100% - 100px);
-  .chat-header {
-    display: flex;
-    align-items: center;
+  --background: #ffff00;
+}
+
+/* Chat Header */
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #f2f2f2; 
+  border-radius: 8px; 
+  margin: 16px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  margin-right: 16px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name-and-number {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-and-number h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.name-and-number p {
+  font-size: 14px;
+  margin: 4px 0;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.name-and-number ion-icon {
+  margin-right: 8px;
+  font-size: 16px;
+  color: #777;
+}
+
+
+ion-segment-button {
+    background-color: var(--ion-color-secondary); 
+    color: var(--ion-color-primary-contrast); 
+    border: 1px solid var(--ion-color-primary);
+    border-radius: 4px; 
+    margin: 4px; 
+}
+
+ion-segment-button.checked {
+    background-color: var(--ion-color-primary); 
+    color: var(--ion-color-secondary-contrast); 
+}
+
+/* Admin Details Styles */
+.admin-details {
+  text-align: center; 
+  padding: 16px; 
+  background-color: var(--ion-color-secondary); 
+  color: var(--ion-color-secondary-contrast); 
+  border-bottom: 1px solid var(--ion-color-primary); 
+}
+
+.admin-details h3 {
+  margin: 0; 
+  font-size: 20px; 
+}
+
+.admin-details p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.admin-details ion-icon {
+  margin-right: 8px; 
+}
+
+/* Chat List */
+.chat-list {
+  background-color: #d6c9c9; 
+  
+  padding: 16px; 
+}
+
+
+.chat-list ion-item.sent {
+  justify-content: flex-end; 
+  background-color: #e8f5e9; 
+}
+
+.chat-list ion-item.received {
+  justify-content: flex-start; 
+
+}
+
+.message-text {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 8px;
+  max-width: 70%;
+}
+
+/* Input Box */
+.input-container {
+  background-color: #f2f2f2; 
+  padding: 12px 16px; 
+  border-radius: 8px; 
+  margin: 16px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Quick Reply Container */
+.quick-reply-container {
+    background-color: transparent; 
+    border: none; 
+    box-shadow: none; 
+    padding: 16px; 
+}
+
+/* Chat List Container */
+.chat-list-container {
+    flex-grow: 1; 
+    overflow-y: auto; 
+    background-color: transparent; 
+    border: none; 
+    box-shadow: none; 
     padding: 16px;
-    border-bottom: 1px solid #ccc;
-
-    .profile-pic {
-      width: 40px;
-      height: 40px;
-      margin-right: 16px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .name-and-number {
-      display: flex;
-      flex-direction: column;
-
-      div {
-        font-size: 14px;
-        color: #666;
-      }
-
-      div:first-child {
-        font-weight: bold;
-        color: #333;
-      }
-    }
-  }
+}
 
 
-  .chat-list {
-    ion-item {
-      padding: 8px;
-
-      &.sent {
-        justify-content: flex-end;
-
-        .message-text {
-          background-color: #007AFF;
-          color: white;
-          border-radius: 16px;
-          padding: 8px;
-        }
-      }
-
-      &.received {
-        justify-content: flex-start;
-
-        .message-text {
-          background-color: #EFEFF4;
-          color: #333;
-          border-radius: 16px;
-          padding: 8px;
-        }
-      }
-
-      .message-text {
-        font-size: 16px;
-      }
-    }
-  }
-
-  ion-item {
-  border-radius: 50px;
-
-  }
-
-
-  ion-grid {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
-
-    ion-col {
-      display: flex;
-      align-items: center;
-
-      ion-input {
-        font-size: 16px;
-      }
-
-      ion-button {
-        margin-left: 16px;
-      }
-    }
-  }
+/* Chat Driver Container */
+.driver-chat-container {
+  background-color: #ffffff; 
+  border-radius: 8px; 
+  margin: 16px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
 }
