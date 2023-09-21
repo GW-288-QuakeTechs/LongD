@@ -119,10 +119,10 @@ export class BottomSheetComponent implements OnInit {
   }
 
   book(type: string) {
-
     if (type == "one") {
       console.log("one way booked")
-      this.router.navigate(['/new-trip']); // Replace with your actual route
+      this.router.navigate(['tabs/newTrip']); // Replace with your actual route
+      this.modalController.dismiss();
     }
     else {
       console.log("round trip booked")

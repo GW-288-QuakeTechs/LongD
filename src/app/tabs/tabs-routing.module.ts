@@ -28,6 +28,10 @@ const routes: Routes = [
         loadChildren: () => import('../bookride/bookride.module').then(m => m.BookridePageModule)
       },
       {
+        path: 'newTrip',
+        loadChildren: () => import('../new-trip/new-trip.module').then(m => m.NewTripPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

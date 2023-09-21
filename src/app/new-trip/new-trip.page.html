@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button> <ion-icon name="arrow-back-outline"></ion-icon> </ion-button>
+    </ion-buttons>
+    <ion-title>Create New Trip</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <ion-button class="ion-margin" color="secondary" size="large">OneDub</ion-button>
+        <ion-button class="ion-margin" color="secondary" size="large">RoundT</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-list>
+      <ion-item class="no-underline-item">
+        <ion-label position="start">Pick up Location</ion-label>
+        <ion-select interface="popover" placeholder="Pick City">
+          <ion-select-option value="apples">Apples</ion-select-option>
+          <ion-select-option value="oranges">Oranges</ion-select-option>
+          <ion-select-option value="bananas">Bananas</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="no-underline-item">
+        <ion-label position="start">Drop Off Location</ion-label>
+        <ion-select interface="popover" placeholder="Pick City">
+          <ion-select-option value="apples">Apples</ion-select-option>
+          <ion-select-option value="oranges">Oranges</ion-select-option>
+          <ion-select-option value="bananas">Bananas</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-row class="ion-align-items-center ion-margin-top">
+      <ion-col size="12" class="ion-text-center">
+        <h3> Book Seats</h3>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-align-items-center ion-margin-top">
+      <ion-col size="4" class="ion-text-center">
+        <ion-button class="ion-margin" color="secondary" size="large">-</ion-button>
+      </ion-col>
+      <ion-col size="4" class="ion-text-center">
+        <!--make in create on click-->
+        <h2 class="ion-text-center">2</h2>
+      </ion-col>
+      <ion-col size="4" class="ion-text-center">
+        <ion-button class="ion-margin" color="secondary" size="large">+</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
