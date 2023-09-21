@@ -24,6 +24,14 @@ const routes: Routes = [
         loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
       },
       {
+        path: 'bookRide',
+        loadChildren: () => import('../bookride/bookride.module').then(m => m.BookridePageModule)
+      },
+      {
+        path: 'newTrip',
+        loadChildren: () => import('../new-trip/new-trip.module').then(m => m.NewTripPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
@@ -40,4 +48,4 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

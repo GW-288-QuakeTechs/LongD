@@ -136,10 +136,32 @@ ion-header {
     top: 0.75rem
 }
 
-ion-segment-button {
-    --background-checked: black;
-    --color-checked: white;
-    --color: black;
+ion-segment-button::part(indicator-background) {
+  background: black;
+}
+ion-segment-button.md::part(native) {
+  color: black;
+}
+
+.segment-button-checked.md::part(native) {
+  color: white;
+}
+
+ion-segment-button.md::part(indicator-background) {
+  height: 4px;
+}
+
+/* iOS styles */
+ion-segment-button.ios::part(native) {
+  color: black;
+}
+
+.segment-button-checked.ios::part(native) {
+  color: #fff;
+}
+
+ion-segment-button.ios::part(indicator-background) {
+  border-radius: 20px;
 }
 
 .star {

@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
-import { TabsPage } from '../tabs/tabs.page';
 
 @Component({
-  selector: 'app-bookride',
-  templateUrl: './bookride.page.html',
-  styleUrls: ['./bookride.page.scss'],
+  selector: 'app-new-trip',
+  templateUrl: './new-trip.page.html',
+  styleUrls: ['./new-trip.page.scss'],
 })
-export class BookridePage implements OnInit {
+export class NewTripPage implements OnInit {
 
   constructor(private modalController: ModalController) { }
 
@@ -19,6 +18,7 @@ export class BookridePage implements OnInit {
     });
     return await modal.present();
   }
+
   ngOnInit() {
   }
 

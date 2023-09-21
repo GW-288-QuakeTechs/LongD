@@ -1,0 +1,17 @@
+.sheet {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center; /* Optional: Center the button horizontally */
+  padding: 10px;
+}
+
+
+.no-underline-item {
+  --highlight-height: 0; /* Set the highlight height to 0 */
+  --border-width: 0; /* Set the border width to 0 */
+  --inner-border-width: 0; /* Set the inner border width to 0 */
+  --border-style: none; /* Remove the border style */
+}
+
