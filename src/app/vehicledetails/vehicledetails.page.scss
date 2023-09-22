@@ -1,0 +1,117 @@
+ion-title {
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+.trip-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  .trip-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    .driver-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+      }
+
+      .driver-details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        font-weight: bold;
+      }
+
+      .driver-name {
+        font-size: 1.2rem;
+      }
+
+      .trip-count,
+      .driver-rating {
+        font-size: 0.8rem;
+        color: #666;
+      }
+
+      .driver-rating {
+        color: #ffca28;
+      }
+    }
+
+    img {
+      width: 100%;
+      max-width: 20rem;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+
+    .trip-details {
+      display: flex;
+      align-items: center;
+      gap: 1rem; 
+    
+      .image-container {
+        flex: 1; 
+      }
+    
+      img {
+        width: 100%;
+        max-width: 100%; 
+        height: auto; 
+      }
+    }
+    
+
+    .star {
+      color: gold;
+      margin-left: 5px;
+    }
+
+
+    .amenities {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      margin-top: 0.5rem;
+
+      img {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
+      }
+    }
+
+    .seat-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .seat-icon {
+      font-size: 24px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .seat-icon:hover {
+      color: blue;
+    }
+
+  }
+}

@@ -64,6 +64,12 @@ const routes: Routes = [
     path: 'newTrip',
     loadChildren: () => import('./new-trip/new-trip.module').then( m => m.NewTripPageModule)
   },
+
+  {
+    path: 'vehicledetails',
+    loadChildren: () => import('./vehicledetails/vehicledetails.module').then(m => m.VehicleDetailsPageModule)
+  },  
+
 ];
 @NgModule({
   imports: [
