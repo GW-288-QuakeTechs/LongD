@@ -36,8 +36,8 @@
 
     <!-- Chat Messages  -->
     <ion-list class="chat-list">
-      <h3>Admin Name</h3>
-      <p><ion-icon name="call-outline"></ion-icon> Admin Phone Number</p>
+      <h3>LongD Admin</h3>
+      <p><ion-icon name="call-outline"></ion-icon> +12345678999 </p>
       <ng-container *ngFor="let message of currentRoom.messages">
         <ion-item *ngIf="message.sender === currentUser.phoneNumber" class="sent">
           <div class="message-text">{{message.text}}</div>

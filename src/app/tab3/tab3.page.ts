@@ -25,6 +25,7 @@ export class Tab3Page {
     'Running Late',
     ' ',
   ];
+  
    selectQuickReply(reply: string) {
     this.newMessage = reply;
   }
