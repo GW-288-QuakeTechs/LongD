@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [
+const routes: Routes = [ 
   {
     path: '',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
@@ -11,8 +10,32 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
+    path: 'tab2',
+    loadChildren: () => import('./tab2/tab2.module').then(m => m.Tab2PageModule)
+  },
+  {
+    path: 'bookride',
+    loadChildren: () => import('./bookride/bookride.module').then(m => m.BookridePageModule)
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then(m => m.ChatPageModule)
+  },
+  {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'profile2',
+    loadChildren: () => import('./profile2/profile2.module').then( m => m.Profile2PageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'newride',
+    loadChildren: () => import('./newride/newride.module').then(m => m.NewridePageModule)
   },
   {
     path: 'signup',
@@ -23,21 +46,8 @@ const routes: Routes = [
     loadChildren: () => import('./rider-availability/rider-availability.module').then( m => m.RiderAvailabilityPageModule)
   },
   {
-    path: 'profile2',
-    loadChildren: () => import('./profile2/profile2.module').then( m => m.Profile2PageModule)
-  },
-  {
-    path: 'settings',
-    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
-  },
-
-  {
     path: 'search',
     loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
-  },
-  {
-    path: 'bookride',
-    loadChildren: () => import('./bookride/bookride.module').then( m => m.BookridePageModule)
   },
   {
     path: 'one-dub',
@@ -46,8 +56,13 @@ const routes: Routes = [
   {
     path: 'round-t',
     loadChildren: () => import('./round-t/round-t.module').then( m => m.RoundTPageModule)
-  }
+  },
+  {
+    path: 'vehicledetails',
+    loadChildren: () => import('./vehicledetails/vehicledetails.module').then(m => m.VehicleDetailsPageModule)
+  },   
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

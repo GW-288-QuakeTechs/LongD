@@ -1,52 +1,68 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>
-      PROFILE
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-button [routerLink]="['/settings/']">
-        <ion-icon name="settings"></ion-icon>
-      </ion-button>
-      <ion-button>
-        <ion-icon name="log-out">Log Out</ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content color="primary">
+<ion-content>
   <div class="profile-header">
-    <ion-avatar>
-      <img src="assets/pic.jpg">
-    </ion-avatar>
-    <h1>John Doe</h1>
-    <p class="location">Chicago, IL</p>
-    <p >(123) 456-7890</p>
+    <img class="profile-pic" [src]="currentUser.profilePicUrl">
+    <div class="profile-details">
+      <h2>{{currentUser.name}}</h2>
+      <p><ion-icon name="location-outline"></ion-icon> {{currentUser.location}}</p>
+      <p><ion-icon name="call-outline"></ion-icon> {{currentUser.phoneNumber}}</p>
+      <p><ion-icon name="calendar-outline"></ion-icon> {{currentUser.dob}}</p>
+      <p><ion-icon name="time-outline"></ion-icon> Joined: {{currentUser.joinedDate}}</p>
+    </div>
+    <ion-button class="edit-profile-button" [routerLink]="['/profile2/']">
+      <ion-icon slot="start" name="create-outline"></ion-icon>
+      Edit Profile
+    </ion-button>
   </div>
 
-  <ion-list class="profile-info">
-    <ion-item>
-      <ion-label>Date of Birth</ion-label>
-      <p class="value">01/01/1990</p>
-    </ion-item>
-    <ion-item>
-      <ion-label>Date Joined</ion-label>
-      <p class="value">01/01/2018</p>
-    </ion-item>
-    <ion-item>
-      <ion-label>Trips</ion-label>
-      <p class="value">100</p>
-    </ion-item>
-    <ion-item>
-      <ion-label>Rating</ion-label>
-      <ion-icon name="star" *ngFor="let i of [1,2,3,4,5]" [color]="i<=4.7 ? 'primary' : 'medium'"></ion-icon>
-      <p class="rating-value">4.7</p>
-    </ion-item>
-    <ion-item>
-      <ion-label>Home Address</ion-label>
-      <p class="rating-value"></p>
-    </ion-item>
-  </ion-list>
 
-  <ion-button expand="block" color ="secondary" [routerLink]="['/profile2/']">Edit Profile</ion-button>
-</ion-content>
+  <div class="list-container">
+    <ion-list class="profile-info">
+      <!-- Rating -->
+      <ion-item class="highlighted-rating">
+        <div class="rating-center">
+          <div class="rating-label">Rating</div>
+          <div class="rating-stars">
+            <ion-icon name="star" *ngFor="let i of [1,2,3,4,5]" [color]="i<=4.7 ? 'primary' : 'medium'"></ion-icon>
+            <span class="rating-value">4.7</span>
+          </div>
+        </div>
+      </ion-item>
+
+
+      <!-- Add Home/Office Address -->
+      <ion-item>
+        <ion-label>Add Home/Office Address</ion-label>
+        <ion-button fill="clear" slot="end">
+          <ion-icon name="add-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <!-- Enter Referral Code for Points -->
+      <ion-item>
+        <ion-label>Enter Referral Code for Points</ion-label>
+        <ion-button fill="clear" slot="end">
+          <ion-icon name="add-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+    <ion-button style="position: absolute;" [routerLink]="['/settings/']">
+      <ion-icon slot="start" name="settings"></ion-icon>
+      Settings
+    </ion-button>
+    <ion-button style="margin-top: 70px;" [routerLink]="['//']">
+      <ion-icon slot="start" name="log-out-outline"></ion-icon>
+      Log Out
+    </ion-button>
+
+
+  </div>
+  <div class="settings-signout-buttons">
+    <!-- <ion-button [routerLink]="['/settings/']">
+      <ion-icon slot="start" name="settings"></ion-icon>
+      Settings
+    </ion-button>
+    <ion-button [routerLink]="['//']">
+      <ion-icon slot="start" name="log-out-outline"></ion-icon>
+      Log Out
+    </ion-button> -->
+  </div>

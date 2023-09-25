@@ -1,0 +1,34 @@
+
+ion-content {
+    --background: url('/assets/homemap.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+ion-button {
+  --background: #012061;
+  color: white;
+}
+
+div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 100%;
+  padding: 40px;
+}
+
+ion-searchbar {
+  --border-radius: 50px;
+  margin-bottom: 0px;
+  --color: rgb(48, 48, 48);
+  --placeholder-color: rgba(160, 160, 160, 0.5);
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9999;
+}

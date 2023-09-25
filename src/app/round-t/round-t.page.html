@@ -1,32 +1,199 @@
 <ion-header>
-  <ion-toolbar color="secondary">
-    <ion-buttons slot="start">
-      <ion-button color="primary" [routerLink]="['/one-dub']">OneDub</ion-button>
-    </ion-buttons>
-    <ion-title>
-      ROUNDT
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-button color="primary">RoundT</ion-button>
-    </ion-buttons>
+  <ion-toolbar style="height: 90px;" color="primary">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="auto">
+          <ion-button size="large" class="backarrow" [routerLink]="['/tabs/bookride']">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="auto">
+          <div class="headertitle">
+            <h6>BOOK A RIDE </h6>
+          </div>
+        </ion-col>
+        <ion-col size="auto">
+          <ion-button size="large" class="addtrip" [routerLink]="['/tabs/bookride']">
+            <ion-icon name="add-circle"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
+  <ion-toolbar style="height: 100px; margin-top: 30px;" color="primary">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button class="one-dub" shape="round" expand="block" routerLink="/one-dub">OneDub</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="round-t" shape="round" expand="block" routerLink="/round-t">RoundT</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button class="backarrowt">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col style="margin-top: 15px;">
+          <ion-label>
+            MADISON, WI
+          </ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-button class="forwardarrow">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+
   <ion-list>
-    <ion-item *ngFor="let trip of displayedTrips">
-      <div class="thumbnail-container">
-        <!-- Thumbnail images here -->
-      </div>
-      <ion-label>
-        <h2>{{ trip.driver }}</h2>
-        <p>{{ trip.destination }}</p>
-        <p>{{ trip.departurePlace }}</p>
-        <p>{{ trip.departureTime }}</p>
-        <p [ngClass]="{ 'red-text': trip.layover }">{{ trip.layover }}</p>
+    <ion-item lines="none" *ngFor="let trip of displayedTrips">
+      <ion-thumbnail slot="start">
+        <ion-img src="{{ trip.pics }}"></ion-img>
+      </ion-thumbnail>
+      <ion-label style="margin-top: -10px; margin-left: -10px;">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="auto">
+              <div class="name">
+                <h2>{{ trip.driver }} </h2>
+              </div>
+            </ion-col>
+            <ion-col size="auto">
+              <div class="nooftrips">
+                <h2>{{ trip.nooftrips }} Trips</h2>
+              </div>
+            </ion-col>
+            <ion-col size="auto">
+              <div class="rating">
+                <h2>{{ trip.rating }} </h2>
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="margin-right: 60px;">
+            <ion-col>
+              <ion-img class="icons" src="{{ trip.caricon }}"></ion-img>
+            </ion-col>
+            <ion-col>
+              <ion-img class="icons" src="{{ trip.acicon }}"></ion-img>
+            </ion-col>
+            <ion-col>
+              <ion-img class="icons" src="{{ trip.iicon }}"></ion-img>
+            </ion-col>
+            <ion-col>
+              <ion-img class="icons" src="{{ trip.blindicon }}"></ion-img>
+            </ion-col>
+            <ion-col>
+              <ion-img class="icons" src="{{ trip.tvicon }}"></ion-img>
+            </ion-col>
+            <ion-col>
+              <ion-item class="itemcar" lines="none">
+                <ion-button class="cartype" routerLink="/vehicledetails">
+                  <ion-img slot="start" class="caricon" src="{{ trip.cartypeicon }}"></ion-img>
+                  <h2 class="cartypetext">
+                    {{ trip.cartype }}
+                  </h2>
+                </ion-button>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="margin-left: -20px;">
+            <ion-item lines="none">
+              <ion-col slot="start">
+                <ion-icon name="calendar-clear-outline"></ion-icon>
+              </ion-col>
+              <ion-col>
+                <h2 class="date">{{ trip.date }}</h2>
+              </ion-col>
+              <ion-col>
+                <h2 class="time">{{ trip.time }} Departure</h2>
+              </ion-col>
+            </ion-item>
+          </ion-row>
+
+          <ion-row style="margin-top: -28px; margin-left: -20px;">
+            <ion-item lines="none">
+              <ion-col slot="start">
+                <ion-icon name="location-outline"></ion-icon>
+              </ion-col>
+              <ion-col>
+                <h2 class="location">{{ trip.location }}</h2>
+              </ion-col>
+            </ion-item>
+          </ion-row>
+
+          <ion-row style="margin-top: -12px; margin-left: 2px;">
+            <ion-col>
+              <ion-label style="font-size: 12px; font-weight: bold; color: #FF0040;">--------6HOUR
+                LAYOVER---------</ion-label>
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="margin-left: -20px;     margin-top: -8px;">
+            <ion-item lines="none">
+              <ion-col slot="start">
+                <ion-icon name="calendar-clear-outline"></ion-icon>
+              </ion-col>
+              <ion-col>
+                <h2 class="date">{{ trip.date }}</h2>
+              </ion-col>
+              <ion-col>
+                <h2 class="time">{{ trip.time }} Departure</h2>
+              </ion-col>
+            </ion-item>
+          </ion-row>
+          <ion-row style="margin-top: -28px; margin-left: -20px;">
+            <ion-item lines="none">
+              <ion-col slot="start">
+                <ion-icon name="location-outline"></ion-icon>
+              </ion-col>
+              <ion-col>
+                <h2 class="location">{{ trip.location }}</h2>
+              </ion-col>
+            </ion-item>
+          </ion-row>
+
+          <ion-row style="margin-right: 85px;">
+            <ion-col>
+              <ion-icon class="seats" name="person-outline"></ion-icon>
+            </ion-col>
+            <div class="verticalLine"></div>
+            <ion-col>
+              <ion-icon class="seats" name="person-outline"></ion-icon>
+            </ion-col>
+            <ion-col>
+              <ion-icon class="seats" name="person"></ion-icon>
+            </ion-col>
+            <ion-col>
+              <ion-icon class="seats" name="person-outline"></ion-icon>
+            </ion-col>
+            <div class="verticalLine"></div>
+            <ion-col>
+              <ion-icon class="seats" name="person"></ion-icon>
+            </ion-col>
+            <ion-col>
+              <ion-icon class="seats" name="person"></ion-icon>
+            </ion-col>
+            <ion-col>
+              <ion-icon class="seats" name="person"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-label class="car">INFINITI QX80</ion-label>
+        <ion-label class="car2">V23 3467 IL</ion-label>
+        <ion-label class="carcolor">WHITE</ion-label>
+        <ion-button class="booktrip">BOOK TRIP
+        </ion-button>
       </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>
-

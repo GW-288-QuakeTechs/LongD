@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar style="height: 100px;" color="primary">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button class="backarrow" [routerLink]="['/tabs/bookride']">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="auto">
+          <div class="headertitle">
+            <h6>CREATE NEW TRIP</h6>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button class="one-dub" shape="round" expand="block" routerLink="/one-dub">OneDub</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="round-t" shape="round" expand="block" routerLink="/round-t">RoundT</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item lines="none">
+    <ion-label>Pick up Location</ion-label>
+    <ion-select interface="popover" placeholder="PICK CITY">
+      <ion-select-option>Female</ion-select-option>
+      <ion-select-option>Male</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-label>Drop off Location</ion-label>
+    <ion-select interface="popover" placeholder="PICK CITY">
+      <ion-select-option value="light">Light</ion-select-option>
+      <ion-select-option value="fair">Fair</ion-select-option>
+      <ion-select-option value="wheatish">Wheatish</ion-select-option>
+      <ion-select-option value="dark">Dark</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-grid>
+    <ion-col></ion-col>
+    <ion-col>
+      <ion-item lines="none">
+        <h6 style="margin-left: 35%;">BOOK SEATS</h6>
+      </ion-item>
+    </ion-col>
+  </ion-grid>
+
+  <ion-item lines="none">
+    <ion-button (click)="removeseat()" slot="start" size="large" class="removeseat">
+      <ion-icon name="remove-outline"></ion-icon>
+    </ion-button>
+    <div class="countnum">
+      <ion-label style="color: black;">{{count}}</ion-label>
+    </div>
+    <ion-button (click)="addseat()" slot="end" size="large" class="removeseat">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+
+  <ion-grid>
+    <ion-col></ion-col>
+    <ion-col>
+      <ion-item lines="none">
+        <h6 style="margin-left: 35%;">Trip Date & Time</h6>
+      </ion-item>
+    </ion-col>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-datetime-button id="fake-click" datetime="date"></ion-datetime-button>
+        <ion-button class="btndate" shape="round" expand="block" (click)="openDate()">
+
+          OneDub <ion-icon style=" margin-left: 40px;" name="calendar-outline"></ion-icon></ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-datetime-button id="fake-click" datetime="time"></ion-datetime-button>
+        <ion-button class="btntime" shape="round" expand="block" (click)="openTime()">RoundT <ion-icon
+            style="margin-left: 40px;" name="time-outline"></ion-icon></ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-modal [keepContentsMounted]="true" [isOpen]="showDate" (didDismiss)="cancelDate()">
+    <ng-template>
+      <ion-datetime id="date" presentation="date"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal [keepContentsMounted]="true" [isOpen]="showTime" (didDismiss)="cancelTime()">
+    <ng-template>
+      <ion-datetime id="time" presentation="time"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <ion-button class="btnsubmit" shape="round" expand="block" routerLink="/one-dub">SUBMIT</ion-button>
+</ion-content>
