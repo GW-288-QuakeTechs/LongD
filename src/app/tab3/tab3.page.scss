@@ -47,17 +47,17 @@ ion-content {
 }
 
 ion-segment-button {
-    background-color: var(--ion-color-secondary); 
     color: var(--ion-color-primary-contrast); 
     border: 1px solid var(--ion-color-primary);
-    border-radius: 4px; 
+    border-radius: 10px; 
     margin: 4px; 
+    --indicator-color: #102060;
 }
 
-ion-segment-button.checked {
-    background-color: var(--ion-color-primary); 
-    color: var(--ion-color-secondary-contrast); 
+.segment-button-checked{
+   color: var(--ion-color-secondary-contrast); 
 }
+
 
 /* Chat List */
 .chat-list {
@@ -75,6 +75,11 @@ ion-segment-button.checked {
 .chat-list ion-item.received {
   justify-content: flex-start; 
 
+}
+
+ion-item::part(native){
+  background: white;
+  color: black;
 }
 
 .message-text {
@@ -120,4 +125,3 @@ ion-segment-button.checked {
   font-size: 16px; /* Adjust the font size as needed */
   color: #000000; /* Adjust the text color as needed */
 }
-

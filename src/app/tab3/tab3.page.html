@@ -66,53 +66,53 @@
 
   </div>
 
-<!-- Chat Driver Container -->
-<div *ngIf="selectedRoom === 'driver'" class="driver-chat-container">
+  <!-- Chat Driver Container -->
+  <div *ngIf="selectedRoom === 'driver'" class="driver-chat-container">
 
-  <!-- Chat Header for Driver -->
-  <h3>Bobby Johnson</h3>
-  <p><ion-icon name="call-outline"></ion-icon> +9999999999</p>
+    <!-- Chat Header for Driver -->
+    <h3>Bobby Johnson</h3>
+    <p><ion-icon name="call-outline"></ion-icon> +9999999999</p>
 
-<!-- Quick Reply for Driver -->
-  <div class="quick-reply-container">
-    <ion-input placeholder="Quick reply..." [(ngModel)]="newQuickReply"></ion-input>
-    <ion-list>
-      <ion-item *ngFor="let reply of quickReplies" (click)="selectQuickReply(reply)">
-        {{ reply }}
-      </ion-item>
+    <!-- Quick Reply for Driver -->
+    <div class="quick-reply-container">
+      <ion-input placeholder="Quick reply..." [(ngModel)]="newQuickReply"></ion-input>
+      <ion-list>
+        <ion-item *ngFor="let reply of quickReplies" (click)="selectQuickReply(reply)">
+          {{ reply }}
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <!-- Chat Messages for Driver -->
+    <ion-list class="chat-list">
+      <ng-container *ngFor="let message of currentRoom.messages">
+        <ion-item *ngIf="message.sender === currentUser.phoneNumber" class="sent">
+          <div class="message-text">{{message.text}}</div>
+        </ion-item>
+        <ion-item *ngIf="message.sender !== currentUser.phoneNumber" class="received">
+          <div class="message-text">{{message.text}}</div>
+        </ion-item>
+      </ng-container>
     </ion-list>
+
+
+
+    <!-- Input Container  -->
+    <div class="input-container">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input [(ngModel)]="newMessage"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-2>
+            <ion-icon name="send" (click)="sendMessage()" color="primary"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
   </div>
-
-  <!-- Chat Messages for Driver -->
-  <ion-list class="chat-list">
-    <ng-container *ngFor="let message of currentRoom.messages">
-      <ion-item *ngIf="message.sender === currentUser.phoneNumber" class="sent">
-        <div class="message-text">{{message.text}}</div>
-      </ion-item>
-      <ion-item *ngIf="message.sender !== currentUser.phoneNumber" class="received">
-        <div class="message-text">{{message.text}}</div>
-      </ion-item>
-    </ng-container>
-  </ion-list>
-
-  
-
-  <!-- Input Container  -->
-  <div class="input-container">
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-item>
-            <ion-input [(ngModel)]="newMessage"></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-col col-2>
-          <ion-icon name="send" (click)="sendMessage()" color="primary"></ion-icon>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-
-</div>
 
 </ion-content>
