@@ -1,12 +1,3 @@
-<ion-header>
-  <ion-toolbar color="secondary">
-    <ion-title>
-      PROFILE
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-
 <ion-content>
   <div class="profile-header">
     <img class="profile-pic" [src]="currentUser.profilePicUrl">
@@ -36,40 +27,32 @@
           </div>
         </div>
       </ion-item>
-      
-  
-   <!-- Add Home/Office Address -->
-      <ion-item>
+
+
+      <!-- Add Home/Office Address -->
+      <ion-item lines="none">
         <ion-label>Add Home/Office Address</ion-label>
         <ion-button fill="clear" slot="end">
           <ion-icon name="add-circle-outline"></ion-icon>
         </ion-button>
       </ion-item>
-  
+
       <!-- Enter Referral Code for Points -->
-      <ion-item>
+      <ion-item lines="none">
         <ion-label>Enter Referral Code for Points</ion-label>
         <ion-button fill="clear" slot="end">
           <ion-icon name="add-circle-outline"></ion-icon>
         </ion-button>
       </ion-item>
     </ion-list>
+    <div class="settings-signout-buttons">
+      <ion-button style="position: absolute; color: orange;" [routerLink]="['/settings/']">
+        <ion-icon slot="start" name="settings"></ion-icon>
+      </ion-button>
+      <label style="color: black; margin-left: 60px; margin-top: 15px;">Settings</label>
+      <ion-button style="margin-top: 70px; margin-left: -115px;color: orange;" [routerLink]="['//']">
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+      </ion-button>
+      <label style="color: black; margin-right: 195px; margin-top: 85px;">Sign Out</label>
     </div>
-
-
-
-
-  <div class="settings-signout-buttons">
-  <ion-button [routerLink]="['/settings/']">
-    <ion-icon slot="start" name="settings"></ion-icon>
-    Settings
-  </ion-button>
-  <ion-button [routerLink]="['//']">
-    <ion-icon slot="start" name="log-out-outline"></ion-icon>
-    Log Out
-  </ion-button>
-</div>
-
-
-
-
+  </div>

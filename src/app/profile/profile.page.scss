@@ -94,20 +94,15 @@ ion-content {
   padding: 16px;
 }
 
-.settings-signout-buttons ion-button {
-  flex: 1;
-  margin: 0 8px;
-}
-
 
 /* Button Styling */
 .settings-signout-buttons ion-button {
-  flex: 1;
-  margin: 0 8px;
-  --background: #333; 
+  --background: lightgrey; 
   --color: #fff;
   border-radius: 8px; 
+  
 }
+
 
 
 
