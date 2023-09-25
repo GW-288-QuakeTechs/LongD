@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
-import { TabsPage } from '../tabs/tabs.page';
 
 @Component({
   selector: 'app-bookride',

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { BookingComponent } from '../booking/booking.component';
 
 interface oneWay {
 
@@ -76,8 +77,19 @@ export class BottomSheetComponent implements OnInit {
   trips: oneWay[] = [{ car: "assets/d-pic.png", fname: "Ronnie", lname: "Digs", trips: 3142, rating: 4.82, pets: true, roofrack: true, ac: true, tv: true, fuel: "Gas", wifi: false, date: "6/30/23", time: "2pm", luggage: true, start: "Chicago, IL", destination: "Madison, WI", pax: 2, }]
   roundTrips: roundT[] = [{ carPic: "assets/car1.jpg", pic: "assets/d-pic.png", pets: true, roofrack: true, ac: true, tv: true, fuel: "Gas", wifi: false, date: "6/30/23", sTime1: "3pm", dTime1: "4:45pm", sTime2: "9:00pm", dTime2: "10:45pm", luggage: true, start: "Chicago IL", airport1: "MIA", destination: "Milwaukee WI", pax: 2, airport2: "Mitchell Internatinal Airport", layover: 4 }]
   constructor(private modalController: ModalController,
-    private router: Router) { }
+  ) { }
 
+  async openBooking(value: string) {
+    const modal = await this.modalController.create({
+      component: BookingComponent,
+      componentProps: {
+        bookingType: value
+      },
+      initialBreakpoint: 0.7,
+      backdropDismiss: true, // This enables the backdrop blur effect
+    });
+    return await modal.present();
+  }
 
   setSeats(number: number) {
     switch (number) {
@@ -121,11 +133,11 @@ export class BottomSheetComponent implements OnInit {
   book(type: string) {
     if (type == "one") {
       console.log("one way booked")
-      this.router.navigate(['tabs/newTrip']); // Replace with your actual route
-      this.modalController.dismiss();
+      this.openBooking(type);
     }
     else {
       console.log("round trip booked")
+      this.openBooking(type);
     }
 
   }
