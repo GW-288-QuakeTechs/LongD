@@ -5,6 +5,9 @@ ion-col {
   text-align: center;
 
 }
+ion-content::part(background){
+background:transparent;
+}
 
 //.modal-container {
   //border-radius: 35px;
