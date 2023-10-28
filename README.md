@@ -34,6 +34,7 @@ To get started with the LongD app, follow these steps:
 3. Run the app on your preferred development environment.
 4. Use npm install
 5. Then use ionic serve
+6. (Optional) Change your browser view to a mobile device to see mobile layout
 
 For detailed instructions on building and running the app, please refer to the project's documentation.
 
