@@ -1,15 +1,18 @@
+/* Style for ion-title */
 ion-title {
   text-align: center;
   display: block;
   margin: auto;
 }
 
+/* Style for .trip-list container */
 .trip-list {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 
+  /* Style for .trip-item within .trip-list */
   .trip-item {
     display: flex;
     flex-direction: column;
@@ -19,17 +22,20 @@ ion-title {
     border-radius: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
+     /* Style for .driver-info within .trip-item */
     .driver-info {
       display: flex;
       align-items: center;
       gap: 1rem;
 
+           /* Style for images within .driver-info */
       img {
         width: 4rem;
         height: 4rem;
         border-radius: 50%;
       }
 
+      /* Style for .driver-details within .driver-info */
       .driver-details {
         display: flex;
         flex-direction: column;
@@ -37,21 +43,25 @@ ion-title {
         font-weight: bold;
       }
 
+      /* Style for .driver-details within .driver-info */
       .driver-name {
         font-size: 1.2rem;
       }
 
+      /* Style for .driver-details within .driver-info */
       .trip-count,
       .driver-rating {
         font-size: 0.8rem;
         color: #666;
       }
 
+      /* Style for .driver-details within .driver-info */
       .driver-rating {
         color: #ffca28;
       }
     }
 
+     /* Style for images within .trip-item */
     img {
       width: 100%;
       max-width: 20rem;
@@ -59,15 +69,18 @@ ion-title {
       border-radius: 1rem;
     }
 
+    /* Style for .trip-details within .trip-item */
     .trip-details {
       display: flex;
       align-items: center;
       gap: 1rem; 
     
+      /* Style for .image-container within .trip-details */
       .image-container {
         flex: 1; 
       }
     
+         /* Style for images within .image-container */
       img {
         width: 100%;
         max-width: 100%; 
@@ -75,13 +88,13 @@ ion-title {
       }
     }
     
-
+ /* Style for .star elements */
     .star {
       color: gold;
       margin-left: 5px;
     }
 
-
+/* Style for .amenities within .trip-item */
     .amenities {
       display: flex;
       align-items: center;
@@ -89,6 +102,7 @@ ion-title {
       width: 100%;
       margin-top: 0.5rem;
 
+        /* Style for images within .amenities */
       img {
         width: 1.5rem;
         height: 1.5rem;
@@ -96,6 +110,7 @@ ion-title {
       }
     }
 
+     /* Style for .seat-icons within .trip-item */
     .seat-icons {
       display: flex;
       justify-content: center;
@@ -103,12 +118,13 @@ ion-title {
       margin-top: 10px;
     }
 
+        /* Style for .seat-icon elements */
     .seat-icon {
       font-size: 24px;
       margin: 0 5px;
       cursor: pointer;
     }
-
+        /* Hover effect for .seat-icon elements */
     .seat-icon:hover {
       color: blue;
     }
