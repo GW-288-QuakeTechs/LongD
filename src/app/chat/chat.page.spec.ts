@@ -2,24 +2,27 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-// Import the component to be tested
-import { ExploreContainerComponent } from './explore-container.component';
+// Import the ExploreContainerComponentModule
+import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-// Describe a test suite for the 'ExploreContainerComponent' component
-describe('ExploreContainerComponent', () => {
-  let component: ExploreContainerComponent;
-  let fixture: ComponentFixture<ExploreContainerComponent>;
+// Import the component to be tested
+import { ChatPage } from './chat.page';
+
+// Describe a test suite for the 'ChatPage' component
+describe('ChatPage', () => {
+  let component: ChatPage;
+  let fixture: ComponentFixture<ChatPage>;
 
   // Set up an asynchronous testing environment
   beforeEach(async () => {
     // Configure and initialize the testing module
     await TestBed.configureTestingModule({
-      declarations: [ExploreContainerComponent], // Declare the component to be tested
-      imports: [IonicModule.forRoot()] // Import necessary modules
+      declarations: [ChatPage], // Declare the component to be tested
+      imports: [IonicModule.forRoot(), ExploreContainerComponentModule] // Import necessary modules
     }).compileComponents();
 
     // Create a fixture for the component and get an instance of the component
-    fixture = TestBed.createComponent(ExploreContainerComponent);
+    fixture = TestBed.createComponent(ChatPage);
     component = fixture.componentInstance;
 
     // Trigger change detection to update the component

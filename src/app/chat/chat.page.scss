@@ -1,0 +1,132 @@
+/* Set the background color of ion-content to a light yellow */
+ion-content {
+  --background: #ffff00;
+}
+
+/* Styles for the Chat Header */
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  margin: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Styling for the profile picture */
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  margin-right: 16px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Styles for the user's name and information */
+.name-and-number {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-and-number h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.name-and-number p {
+  font-size: 14px;
+  margin: 4px 0;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.name-and-number ion-icon {
+  margin-right: 8px;
+  font-size: 16px;
+  color: #777;
+}
+
+/* Styling for ion-segment-button */
+ion-segment-button {
+  color: var(--ion-color-primary-contrast);
+  border: 1px solid var(--ion-color-primary);
+  border-radius: 10px;
+  margin: 4px;
+  --indicator-color: #102060;
+}
+
+/* Styling for the checked segment button */
+.segment-button-checked {
+  color: var(--ion-color-secondary-contrast);
+}
+
+/* Styles for the Chat List */
+.chat-list {
+  background-color: #e6dfdf;
+  text-align: center;
+  color: #000000;
+  padding: 10px;
+}
+
+.chat-list ion-item.sent {
+  justify-content: flex-end;
+  background-color: #e8f5e9;
+}
+
+chat-list ion-item.received {
+  justify-content: flex-start;
+}
+
+ion-item::part(native) {
+  background: white;
+  color: black;
+}
+
+/* Styling for message text */
+.message-text {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 8px;
+  max-width: 70%;
+}
+
+/* Styles for the Input Box */
+.input-container {
+  background-color: #f2f2f2;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Styling for quick reply options */
+.quick-reply-container ion-item {
+  background-color: #e0f7fa;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+quick-reply-container ion-item:hover {
+  background-color: #b2ebf2;
+  cursor: pointer;
+}
+
+/* Styles for the Chat List Container */
+.chat-list-container {
+  padding: 10px;
+}
+
+/* Styles for the Chat Driver Container */
+.driver-chat-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  font-size: 16px;
+  color: #000000;
+}

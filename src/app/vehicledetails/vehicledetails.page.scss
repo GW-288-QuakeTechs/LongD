@@ -74,12 +74,10 @@ ion-title {
       display: flex;
       align-items: center;
       gap: 1rem; 
-    
       /* Style for .image-container within .trip-details */
       .image-container {
         flex: 1; 
       }
-    
          /* Style for images within .image-container */
       img {
         width: 100%;
@@ -128,6 +126,5 @@ ion-title {
     .seat-icon:hover {
       color: blue;
     }
-
   }
 }

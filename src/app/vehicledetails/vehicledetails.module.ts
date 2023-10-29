@@ -2,9 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { VehicleDetailsPageRoutingModule } from './vehicledetails-routing.module';
 
 import { VehicleDetailsPage } from './vehicledetails.page';
@@ -20,4 +18,3 @@ import { VehicleDetailsPage } from './vehicledetails.page';
   declarations: [VehicleDetailsPage]
 })
 export class VehicleDetailsPageModule {}  // Define the Angular module class for the VehicleDetailsPage
-

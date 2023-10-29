@@ -1,1 +1,11 @@
+ion-tab-bar{
+    background: white;
+}
+ion-tab-button{
+    background: white;
+}
 
+
+ion-tab-button::part(native){
+    margin-top: 5px;
+}

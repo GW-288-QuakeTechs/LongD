@@ -1,5 +1,7 @@
+<!-- This is the header section of the Ionic page -->
 <ion-header>
-  <ion-toolbar color="primary">
+  <!-- A toolbar within the header with a specific style and color -->
+  <ion-toolbar style="height: 70px; --border-width:0" color="primary">
     <ion-buttons slot="start">
       <ion-button> <ion-icon name="arrow-back-outline"></ion-icon> </ion-button>
     </ion-buttons>
@@ -10,8 +12,14 @@
   </ion-toolbar>
 </ion-header>
 
+<!-- This is the content section of the Ionic page -->
 <ion-content>
-  <div class="sheet">
-    <ion-button expand="block" (click)="openBottomSheet()">Create New Trip</ion-button>
-  </div>
+  <!-- A toolbar within the content section with specific styling -->
+  <ion-toolbar style="height: 140px; border-radius: 25px 25px 0px 0px; margin-top: 158%;" color="primary">
+    <!-- A container for content within the toolbar -->
+    <div>
+      <!-- A round-shaped button that expands to the full width of its container and navigates to the "/newride" route when clicked -->
+      <ion-button shape="round" expand="block" routerLink="/newride">CREATE NEW TRIP</ion-button>
+    </div>
+  </ion-toolbar>
 </ion-content>

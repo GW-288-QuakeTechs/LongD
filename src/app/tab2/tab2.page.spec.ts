@@ -8,9 +8,8 @@ import { Tab2Page } from './tab2.page'; // Import the Tab2Page component
 describe('Tab2Page', () => {
   let component: Tab2Page; // Initialize a variable to hold the component instance
   let fixture: ComponentFixture<Tab2Page>; // Initialize a variable to hold the component's fixture
-
-  // Set up asynchronous testing using 'beforeEach'
-  beforeEach(async () => {
+   // Set up asynchronous testing using 'beforeEach'
+   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [Tab2Page], // Declare the component being tested
       imports: [IonicModule.forRoot(), ExploreContainerComponentModule] // Import necessary modules and components

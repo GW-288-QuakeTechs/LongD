@@ -1,0 +1,110 @@
+<ion-content>
+  <!-- Chat Header -->
+  <div class="chat-header">
+    <!-- Display the user's profile picture and information -->
+    <img class="profile-pic" [src]="currentUser.profilePicUrl">
+    <div class="name-and-number">
+      <h2>{{currentUser.name}}</h2>
+      <p><ion-icon name="location-outline"></ion-icon> {{currentUser.location}}</p>
+      <p><ion-icon name="call-outline"></ion-icon> {{currentUser.phoneNumber}}</p>
+      <p><ion-icon name="calendar-outline"></ion-icon> {{currentUser.dob}}</p>
+      <p><ion-icon name="time-outline"></ion-icon> {{currentUser.joinedDate}}</p>
+    </div>
+  </div>
+
+  <!-- Segment Container -->
+  <div class="segment-container">
+    <!-- Allow user to switch between 'Chat Support' and 'Chat Driver' segments -->
+    <ion-segment [(ngModel)]="selectedRoom">
+      <ion-segment-button value="support">
+        Chat Support
+      </ion-segment-button>
+      <ion-segment-button value="driver">
+        Chat Driver
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <!-- Chat List Container (visible when 'Chat Support' is selected) -->
+  <div class="chat-list-container" *ngIf="selectedRoom === 'support'">
+    <!-- Display chat messages with LongD Admin -->
+    <ion-list class="chat-list">
+      <h3>LongD Admin</h3>
+      <p><ion-icon name="call-outline"></ion-icon> +12345678999</p>
+      <ng-container *ngFor="let message of currentRoom.messages">
+        <!-- Display sent and received messages -->
+        <ion-item *ngIf="message.sender === currentUser.phoneNumber" class="sent">
+          <div class="message-text">{{message.text}}</div>
+        </ion-item>
+        <ion-item *ngIf="message.sender !== currentUser.phoneNumber" class="received">
+          <div class> "message-text">{{message.text}}</div>
+        </ion-item>
+      </ng-container>
+    </ion-list>
+
+    <!-- Input Container for sending messages -->
+    <div class="input-container">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input [(ngModel)]="newMessage"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-2>
+            <!-- Button to send the message -->
+            <ion-icon name="send" (click)="sendMessage()" color="primary"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <!-- Chat Driver Container (visible when 'Chat Driver' is selected) -->
+  <div *ngIf="selectedRoom === 'driver'" class="driver-chat-container">
+    <!-- Display chat information for the driver -->
+    <h3>Bobby Johnson</h3>
+    <p><ion-icon name="call-outline"></ion-icon> +9999999999</p>
+
+    <!-- Quick Reply Input and List for the driver -->
+    <div class="quick-reply-container">
+      <ion-input placeholder="Quick reply..." [(ngModel)]="newQuickReply"></ion-input>
+      <ion-list>
+        <!-- Display quick reply options -->
+        <ion-item *ngFor="let reply of quickReplies" (click)="selectQuickReply(reply)">
+          {{ reply }}
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <!-- Chat Messages for the driver -->
+    <ion-list class="chat-list">
+      <ng-container *ngFor="let message of currentRoom.messages">
+        <!-- Display sent and received messages -->
+        <ion-item *ngIf="message.sender === currentUser.phoneNumber" class="sent">
+          <div class="message-text">{{message.text}}</div>
+        </ion-item>
+        <ion-item *ngIf="message.sender !== currentUser.phoneNumber" class="received">
+          <div class="message-text">{{message.text}}</div>
+        </ion-item>
+      </ng-container>
+    </ion-list>
+
+    <!-- Input Container for sending messages -->
+    <div class="input-container">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input [(ngModel)]="newMessage"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-2>
+            <!-- Button to send the message -->
+            <ion-icon name="send" (click)="sendMessage()" color="primary"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

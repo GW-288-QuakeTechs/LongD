@@ -1,8 +1,37 @@
-.sheet {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center; /* Optional: Center the button horizontally */
-  padding: 10px;
+/* Set the background of ion-content to a URL image, center it, and make it cover the content */
+ion-content {
+  --background: url('/assets/homemap.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Customize the styling of ion-button */
+ion-button {
+  --background: #012061; /* Set the background color */
+  color: white; /* Set the text color to white */
+}
+
+/* Style the div element */
+div {
+  display: flex; /* Display as a flex container */
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: center; /* Center content vertically */
+  // align-items: center; /* Potential alignment (commented out) */
+  margin-left: 20px; /* Left margin of 20px */
+  margin-right: 20px; /* Right margin of 20px */
+  height: 100%; /* Occupy 100% of the parent's height */
+  padding: 40px; /* Apply padding of 40px */
+}
+
+/* Style the ion-searchbar component */
+ion-searchbar {
+  --border-radius: 50px; /* Set border-radius for rounded corners */
+  margin-bottom: 0px; /* Remove bottom margin */
+  --color: rgb(48, 48, 48); /* Set text color */
+  --placeholder-color: rgba(160, 160, 160, 0.5); /* Set placeholder text color */
+  position: fixed; /* Fixed position for the search bar */
+  bottom: 20px; /* Distance from the bottom of the viewport */
+  left: 0; /* Align to the left edge of the viewport */
+  right: 0; /* Align to the right edge of the viewport */
+  margin: auto; /* Center horizontally */
+  z-index: 9999; /* Set the stacking order for z-index */
 }

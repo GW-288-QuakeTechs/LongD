@@ -10,9 +10,7 @@ import { Component } from '@angular/core';
 
 // Class definition for the Tab2Page component
 export class Tab2Page {
-
   constructor() {
     // Constructor for the component
   }
-
 }
