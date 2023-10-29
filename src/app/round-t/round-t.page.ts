@@ -20,7 +20,17 @@ export class RoundTPage implements OnInit {
     {cartype: 'ELECTRIC', cartypeicon: 'assets/caricon2.png', seats:'assets/person.png',  location: 'Chicago, IL - Madison, WI', date: '6/30/23', time:'2pm', blindicon:'assets/pet-friendly-icon.png', tvicon: 'assets/tv-icon.png', iicon: 'assets/l-icon.png' ,acicon: 'assets/ac-icon.png', caricon: 'assets/caricon.png', pics: 'assets/car1.jpg', nooftrips:3000, rating: '4/5', driver: 'Scottie Mike', destination: 'Michigan-IIA', departureTime: '4:00pm', icon: 'car', departurePlace: 'Chicago ORD', layover: '6-hour layover' },
   ];
 
-  ngOnInit() {
-  }
+  displayedTrips = this.trips.slice(0, 15);
+  showMoreButton = true;
 
+  ngOnInit() {}
+
+  showMoreDetails() {
+    const currentIndex = this.displayedTrips.length;
+    const nextIndex = currentIndex + 4;
+    this.displayedTrips = [...this.displayedTrips, ...this.trips.slice(currentIndex, nextIndex)];
+    if (this.displayedTrips.length === this.trips.length) {
+      this.showMoreButton = false;
+    }
+  }
 }
