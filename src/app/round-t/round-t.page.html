@@ -1,17 +1,24 @@
+<!-- Ion header containing the navigation bar -->
 <ion-header>
+  <!-- Primary color toolbar with increased height -->
   <ion-toolbar style="height: 90px;" color="primary">
+    <!-- Ion grid for layout -->
     <ion-grid>
+      <!-- Row within the grid -->
       <ion-row>
+        <!-- First column with back button to navigate to 'bookride' -->
         <ion-col size="auto">
           <ion-button size="large" class="backarrow" [routerLink]="['/tabs/bookride']">
             <ion-icon name="arrow-back-outline"></ion-icon>
           </ion-button>
         </ion-col>
+        <!-- Second column for the title of the page -->
         <ion-col size="auto">
           <div class="headertitle">
-            <h6>BOOK A RIDE </h6>
+            <h6>BOOK A RIDE</h6>
           </div>
         </ion-col>
+        <!-- Third column with button to add a trip -->
         <ion-col size="auto">
           <ion-button size="large" class="addtrip" [routerLink]="['/tabs/bookride']">
             <ion-icon name="add-circle"></ion-icon>
@@ -22,28 +29,38 @@
   </ion-toolbar>
 </ion-header>
 
+<!-- Ion content for the main content of the page -->
 <ion-content>
+  <!-- Primary color toolbar with increased height and top margin -->
   <ion-toolbar style="height: 100px; margin-top: 30px;" color="primary">
+    <!-- Ion grid for layout -->
     <ion-grid>
+      <!-- Row within the grid -->
       <ion-row>
+        <!-- First column with button to select 'OneDub' -->
         <ion-col>
           <ion-button class="one-dub" shape="round" expand="block" routerLink="/one-dub">OneDub</ion-button>
         </ion-col>
+        <!-- Second column with button to select 'RoundT' -->
         <ion-col>
           <ion-button class="round-t" shape="round" expand="block" routerLink="/round-t">RoundT</ion-button>
         </ion-col>
       </ion-row>
+      <!-- Row within the grid for location selection -->
       <ion-row>
+        <!-- First column with back arrow -->
         <ion-col>
           <ion-button class="backarrowt">
             <ion-icon name="arrow-back-outline"></ion-icon>
           </ion-button>
         </ion-col>
+        <!-- Second column for location label -->
         <ion-col style="margin-top: 15px;">
           <ion-label>
             MADISON, WI
           </ion-label>
         </ion-col>
+        <!-- Third column with forward arrow -->
         <ion-col>
           <ion-button class="forwardarrow">
             <ion-icon name="arrow-forward-outline"></ion-icon>
@@ -53,33 +70,40 @@
     </ion-grid>
   </ion-toolbar>
 
+  <!-- Ion list for displaying trip items -->
   <ion-list>
+    <!-- Loop through displayedTrips array to generate trip items -->
     <ion-item lines="none" *ngFor="let trip of displayedTrips">
+      <!-- Thumbnail with trip image -->
       <ion-thumbnail slot="start">
         <ion-img src="{{ trip.pics }}"></ion-img>
       </ion-thumbnail>
+      <!-- Label for displaying driver and trip details -->
       <ion-label style="margin-top: -10px; margin-left: -10px;">
         <ion-grid>
           <ion-row>
             <ion-col size="auto">
+              <!-- Label for driver's name -->
               <div class="name">
-                <h2>{{ trip.driver }} </h2>
+                <h2>{{ trip.driver }}</h2>
               </div>
             </ion-col>
             <ion-col size="auto">
+              <!-- Label for the number of trips -->
               <div class="nooftrips">
                 <h2>{{ trip.nooftrips }} Trips</h2>
               </div>
             </ion-col>
             <ion-col size="auto">
+              <!-- Label for driver's rating -->
               <div class="rating">
-                <h2>{{ trip.rating }} </h2>
+                <h2>{{ trip.rating }}</h2>
               </div>
             </ion-col>
           </ion-row>
-
           <ion-row style="margin-right: 60px;">
             <ion-col>
+              <!-- Display icons for car features -->
               <ion-img class="icons" src="{{ trip.caricon }}"></ion-img>
             </ion-col>
             <ion-col>
@@ -96,16 +120,14 @@
             </ion-col>
             <ion-col>
               <ion-item class="itemcar" lines="none">
+                <!-- Button for vehicle details -->
                 <ion-button class="cartype" routerLink="/vehicledetails">
                   <ion-img slot="start" class="caricon" src="{{ trip.cartypeicon }}"></ion-img>
-                  <h2 class="cartypetext">
-                    {{ trip.cartype }}
-                  </h2>
+                  <h2 class="cartypetext">{{ trip.cartype }}</h2>
                 </ion-button>
               </ion-item>
             </ion-col>
           </ion-row>
-
           <ion-row style="margin-left: -20px;">
             <ion-item lines="none">
               <ion-col slot="start">
@@ -119,7 +141,6 @@
               </ion-col>
             </ion-item>
           </ion-row>
-
           <ion-row style="margin-top: -28px; margin-left: -20px;">
             <ion-item lines="none">
               <ion-col slot="start">
@@ -130,15 +151,14 @@
               </ion-col>
             </ion-item>
           </ion-row>
-
           <ion-row style="margin-top: -12px; margin-left: 2px;">
             <ion-col>
-              <ion-label style="font-size: 12px; font-weight: bold; color: #FF0040;">--------6HOUR
+              <!-- Label for 6-hour layover information -->
+              <ion-label style="font-size: 12px; font-weight: bold; color: #FF0040;">--------6 HOUR
                 LAYOVER---------</ion-label>
             </ion-col>
           </ion-row>
-
-          <ion-row style="margin-left: -20px;     margin-top: -8px;">
+          <ion-row style="margin-left: -20px; margin-top: -8px;">
             <ion-item lines="none">
               <ion-col slot="start">
                 <ion-icon name="calendar-clear-outline"></ion-icon>
@@ -161,9 +181,9 @@
               </ion-col>
             </ion-item>
           </ion-row>
-
           <ion-row style="margin-right: 85px;">
             <ion-col>
+              <!-- Seat icons -->
               <ion-icon class="seats" name="person-outline"></ion-icon>
             </ion-col>
             <div class="verticalLine"></div>
@@ -188,11 +208,12 @@
             </ion-col>
           </ion-row>
         </ion-grid>
+        <!-- Labels for car information -->
         <ion-label class="car">INFINITI QX80</ion-label>
         <ion-label class="car2">V23 3467 IL</ion-label>
         <ion-label class="carcolor">WHITE</ion-label>
-        <ion-button class="booktrip">BOOK TRIP
-        </ion-button>
+        <!-- Button to book a trip -->
+        <ion-button class="booktrip">BOOK TRIP</ion-button>
       </ion-label>
     </ion-item>
   </ion-list>

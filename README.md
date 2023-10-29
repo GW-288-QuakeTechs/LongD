@@ -6,10 +6,12 @@ LongD is a mobile app built with HTML, CSS, and the Ionic framework that offers 
 
 ### Current Version
 
-- **Version 1.0.6** (October 28, 2023)
+- **Version 1.0.8** (October 30, 2023)
 
 ### Previous Versions
 
+- **Version 1.0.7** (October 29, 2023)
+- **Version 1.0.6** (October 28, 2023)
 - **Version 1.0.5** (September 28, 2023)
 - **Version 1.0.4** (September 25, 2023)
 - **Version 1.0.3** (September 22, 2023)
@@ -37,7 +39,6 @@ To get started with the LongD app, follow these steps:
 6. (Optional) Change your browser view to a mobile device to see mobile layout
 
 For detailed instructions on building and running the app, please refer to the project's documentation.
-
 
 ---
 

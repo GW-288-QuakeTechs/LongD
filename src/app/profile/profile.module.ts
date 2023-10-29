@@ -10,11 +10,11 @@ import { ProfilePage } from './profile.page';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    ProfilePageRoutingModule
+    CommonModule, // Provides common directives like ngFor, ngIf
+    FormsModule, // Provides support for two-way data binding [(ngModel)]
+    IonicModule, // Provides Ionic framework components and services
+    ProfilePageRoutingModule, // Imports the routing module for the ProfilePage
   ],
-  declarations: [ProfilePage]
+  declarations: [ProfilePage] // Declares the ProfilePage component
 })
-export class ProfilePageModule {}
+export class ProfilePageModule {} // Defines the ProfilePage module

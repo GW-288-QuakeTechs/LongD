@@ -25,7 +25,6 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
-
   {
     path: 'signupa',
     loadChildren: () => import('./signupa/signupa.module').then( m => m.SignupaPageModule)
@@ -37,10 +36,6 @@ const routes: Routes = [
   {
     path: 'signupd',
     loadChildren: () => import('./signupd/signupd.module').then( m => m.SignupdPageModule)
-  },
-  {
-    path: 'profile2',
-    loadChildren: () => import('./profile2/profile2.module').then( m => m.Profile2PageModule)
   },
   {
     path: 'settings',
@@ -55,14 +50,6 @@ const routes: Routes = [
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
   },
   {
-    path: 'rider-availability',
-    loadChildren: () => import('./rider-availability/rider-availability.module').then( m => m.RiderAvailabilityPageModule)
-  },
-  {
-    path: 'search',
-    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
-  },
-  {
     path: 'one-dub',
     loadChildren: () => import('./one-dub/one-dub.module').then( m => m.OneDubPageModule)
   },
@@ -71,15 +58,9 @@ const routes: Routes = [
     loadChildren: () => import('./round-t/round-t.module').then( m => m.RoundTPageModule)
   },
   {
-    path: 'newTrip',
-    loadChildren: () => import('./new-trip/new-trip.module').then( m => m.NewTripPageModule)
-  },
-
-  {
     path: 'vehicledetails',
     loadChildren: () => import('./vehicledetails/vehicledetails.module').then(m => m.VehicleDetailsPageModule)
   },  
-
 ];
 
 @NgModule({

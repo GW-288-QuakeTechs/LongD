@@ -1,4 +1,5 @@
 <ion-content>
+  <!-- Profile header section -->
   <div class="profile-header">
     <img class="profile-pic" [src]="currentUser.profilePicUrl">
     <div class="profile-details">
@@ -8,26 +9,27 @@
       <p><ion-icon name="calendar-outline"></ion-icon> {{currentUser.dob}}</p>
       <p><ion-icon name="time-outline"></ion-icon> Joined: {{currentUser.joinedDate}}</p>
     </div>
+    <!-- Edit profile button -->
     <ion-button class="edit-profile-button" [routerLink]="['/profile2/']">
       <ion-icon slot="start" name="create-outline"></ion-icon>
       Edit Profile
     </ion-button>
   </div>
 
-
+  <!-- List container for profile information -->
   <div class="list-container">
     <ion-list class="profile-info">
-      <!-- Rating -->
+      <!-- Rating section -->
       <ion-item class="highlighted-rating">
         <div class="rating-center">
           <div class="rating-label">Rating</div>
           <div class="rating-stars">
+            <!-- Star icons for rating -->
             <ion-icon name="star" *ngFor="let i of [1,2,3,4,5]" [color]="i<=4.7 ? 'primary' : 'medium'"></ion-icon>
             <span class="rating-value">4.7</span>
           </div>
         </div>
       </ion-item>
-
 
       <!-- Add Home/Office Address -->
       <ion-item>
@@ -45,6 +47,7 @@
         </ion-button>
       </ion-item>
     </ion-list>
+    <!-- Settings and Log Out buttons -->
     <ion-button style="position: absolute;" [routerLink]="['/settings/']">
       <ion-icon slot="start" name="settings"></ion-icon>
       Settings
@@ -53,16 +56,19 @@
       <ion-icon slot="start" name="log-out-outline"></ion-icon>
       Log Out
     </ion-button>
-
-
   </div>
+  <!-- Settings and Log Out buttons in a separate section -->
   <div class="settings-signout-buttons">
-    <!-- <ion-button [routerLink]="['/settings/']">
+    <!-- These buttons can be uncommented if needed -->
+    <!--
+    <ion-button [routerLink]="['/settings/']">
       <ion-icon slot="start" name="settings"></ion-icon>
       Settings
     </ion-button>
     <ion-button [routerLink]="['//']">
       <ion-icon slot="start" name="log-out-outline"></ion-icon>
       Log Out
-    </ion-button> -->
+    </ion-button>
+    -->
   </div>
+</ion-content>

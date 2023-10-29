@@ -1,155 +1,167 @@
+/* Set the background color to yellow */
 ion-content {
   --background: #ffff00; /* Yellow background */
 }
 
+/* Style the profile header */
 .profile-header {
-display: flex;
-align-items: center;
-padding: 16px;
-background-color: #ffffff; 
-border: 1px solid #ccc; 
-border-radius: 25px;
-margin: 16px; 
-position: relative; 
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  margin: 16px;
+  position: relative;
 }
 
+/* Style the edit profile button */
 .edit-profile-button {
-position: absolute; 
-top: 10px; 
-right: 10px; 
-font-size: 12px;
---padding-start: 8px; 
---padding-end: 8px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 12px;
+  --padding-start: 8px;
+  --padding-end: 8px;
 }
 
+/* Style the profile picture */
 .profile-pic {
-width: 100px;
-height: 100px;
-margin-right: 16px;
-border-radius: 50%;
-object-fit: cover;
+  width: 100px;
+  height: 100px;
+  margin-right: 16px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
+/* Style the profile details container */
 .profile-details {
-display: flex;
-flex-direction: column;
-flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
+/* Style the profile name */
 .profile-details h2 {
-font-size: 20px;
-margin-bottom: 8px;
-color: #333;
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #333;
 }
 
+/* Style the profile details paragraph */
 .profile-details p {
-font-size: 14px;
-margin: 4px 0;
-color: #666;
-display: flex;
-align-items: center;
+  font-size: 14px;
+  margin: 4px 0;
+  color: #666;
+  display: flex;
+  align-items: center;
 }
 
+/* Style the icons within the profile details paragraph */
 .profile-details ion-icon {
-margin-right: 8px;
-font-size: 16px;
+  margin-right: 8px;
+  font-size: 16px;
 }
 
+/* Style the list container */
 .list-container {
-background-color: #ffffff; 
-padding: 16px; 
-border-radius: 8px; 
-margin: 16px; 
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Style the profile info container */
 .profile-info {
-background-color: transparent;
+  background-color: transparent;
 }
 
+/* Style the ion-item within the profile info */
 .profile-info ion-item {
---background: transparent;
---padding-start: 20px; 
---padding-end: 20px;
+  --background: transparent;
+  --padding-start: 20px;
+  --padding-end: 20px;
 }
 
+/* Style the ion-label within the profile info */
 .profile-info ion-label {
-font-size: 16px; 
-color: #333;
+  font-size: 16px;
+  color: #333;
 }
 
+/* Style the ion-button within the profile info */
 .profile-info ion-button {
---padding-start: 0;
---padding-end: 0;
+  --padding-start: 0;
+  --padding-end: 0;
 }
 
+/* Style the ion-icon within the profile info */
 .profile-info ion-icon {
-font-size: 24px; 
-color: #666; 
+  font-size: 24px;
+  color: #666;
 }
 
+/* Style the settings and signout buttons container */
 .settings-signout-buttons {
-display: flex;
-justify-content: space-between;
-padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
 }
 
+/* Style the ion-button within the settings and signout buttons */
 .settings-signout-buttons ion-button {
-flex: 1;
-margin: 0 8px;
+  flex: 1;
+  margin: 0 8px;
+  --background: #333;
+  --color: #fff;
+  border-radius: 8px;
 }
 
-
-/* Button Styling */
-.settings-signout-buttons ion-button {
-flex: 1;
-margin: 0 8px;
---background: #333; 
---color: #fff;
-border-radius: 8px; 
-}
-
-
-
-/* Highlighted Rating */
+/* Style the highlighted rating container */
 .highlighted-rating {
-background-color: #f0f0f0; 
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 20px 0;
-border-radius: 8px;
-margin: 8px 0; 
---border-style: none; 
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  border-radius: 8px;
+  margin: 8px 0;
+  --border-style: none;
 }
 
+/* Style the center of the rating container */
 .rating-center {
-display: flex;
-flex-direction: column;
-align-items: center;
-text-align: center;
-width: 100%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
+/* Style the rating label */
 .rating-label {
-font-size: 16px;
-font-weight: bold;
-margin-bottom: 8px;
-color: #333;
-text-align: center; 
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+  text-align: center;
 }
 
+/* Style the rating stars container */
 .rating-stars {
-display: flex;
-align-items: center;
-justify-content: center; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Style the rating stars icons */
 .rating-stars ion-icon {
-margin-right: 5px;
+  margin-right: 5px;
 }
 
+/* Style the rating value */
 .rating-value {
-margin-left: 10px;
-color: #333; 
+  margin-left: 10px;
+  color: #333;
 }
