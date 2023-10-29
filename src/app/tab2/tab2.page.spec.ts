@@ -1,26 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+// Import necessary testing modules and components
+import { ComponentFixture, TestBed } from '@angular/core/testing'; // Import testing-related modules
+import { IonicModule } from '@ionic/angular'; // Import Ionic module
+import { ExploreContainerComponentModule } from '../explore-container/explore-container.module'; // Import the ExploreContainerComponentModule
+import { Tab2Page } from './tab2.page'; // Import the Tab2Page component
 
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-
-import { Tab2Page } from './tab2.page';
-
+// Describe a test suite for 'Tab2Page'
 describe('Tab2Page', () => {
-  let component: Tab2Page;
-  let fixture: ComponentFixture<Tab2Page>;
-
-  beforeEach(async () => {
+  let component: Tab2Page; // Initialize a variable to hold the component instance
+  let fixture: ComponentFixture<Tab2Page>; // Initialize a variable to hold the component's fixture
+   // Set up asynchronous testing using 'beforeEach'
+   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [Tab2Page],
-      imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
-    }).compileComponents();
-
+      declarations: [Tab2Page], // Declare the component being tested
+      imports: [IonicModule.forRoot(), ExploreContainerComponentModule] // Import necessary modules and components
+    }).compileComponents(); // Compile the components
     fixture = TestBed.createComponent(Tab2Page);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture.detectChanges(); // Trigger change detection
   });
-
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeTruthy(); // Check if the component is truthy (exists)
   });
 });

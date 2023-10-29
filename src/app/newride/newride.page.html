@@ -1,22 +1,27 @@
+<!-- Header section with back button and title -->
 <ion-header>
   <ion-toolbar style="height: 100px;" color="primary">
     <ion-grid>
       <ion-row>
         <ion-col>
+          <!-- Back button to navigate to the previous page -->
           <ion-button class="backarrow" [routerLink]="['/tabs/bookride']">
             <ion-icon name="arrow-back-outline"></ion-icon>
           </ion-button>
         </ion-col>
         <ion-col size="auto">
           <div class="headertitle">
-            <h6>CREATE NEW TRIP</h6>
+            <h6>CREATE NEW TRIP</h6> <!-- Title for the page -->
           </div>
         </ion-col>
       </ion-row>
     </ion-grid>
   </ion-toolbar>
 </ion-header>
+
+<!-- Content section -->
 <ion-content>
+  <!-- Buttons for choosing trip type (OneDub or RoundT) -->
   <ion-grid>
     <ion-row>
       <ion-col>
@@ -28,6 +33,7 @@
     </ion-row>
   </ion-grid>
 
+  <!-- Pick up location selection -->
   <ion-item lines="none">
     <ion-label>Pick up Location</ion-label>
     <ion-select interface="popover" placeholder="PICK CITY">
@@ -36,6 +42,7 @@
     </ion-select>
   </ion-item>
 
+  <!-- Drop off location selection -->
   <ion-item lines="none">
     <ion-label>Drop off Location</ion-label>
     <ion-select interface="popover" placeholder="PICK CITY">
@@ -45,6 +52,8 @@
       <ion-select-option value="dark">Dark</ion-select-option>
     </ion-select>
   </ion-item>
+
+  <!-- Booking seats section -->
   <ion-grid>
     <ion-col></ion-col>
     <ion-col>
@@ -53,8 +62,8 @@
       </ion-item>
     </ion-col>
   </ion-grid>
-
   <ion-item lines="none">
+    <!-- Buttons to add or remove seats -->
     <ion-button (click)="removeseat()" slot="start" size="large" class="removeseat">
       <ion-icon name="remove-outline"></ion-icon>
     </ion-button>
@@ -66,6 +75,7 @@
     </ion-button>
   </ion-item>
 
+  <!-- Trip Date & Time selection section -->
   <ion-grid>
     <ion-col></ion-col>
     <ion-col>
@@ -74,34 +84,39 @@
       </ion-item>
     </ion-col>
   </ion-grid>
-
   <ion-grid>
     <ion-row>
       <ion-col>
+        <!-- Button for choosing the trip date -->
         <ion-datetime-button id="fake-click" datetime="date"></ion-datetime-button>
         <ion-button class="btndate" shape="round" expand="block" (click)="openDate()">
-
-          OneDub <ion-icon style=" margin-left: 40px;" name="calendar-outline"></ion-icon></ion-button>
+          OneDub <ion-icon style=" margin-left: 40px;" name="calendar-outline"></ion-icon>
+        </ion-button>
       </ion-col>
       <ion-col>
+        <!-- Button for choosing the trip time -->
         <ion-datetime-button id="fake-click" datetime="time"></ion-datetime-button>
-        <ion-button class="btntime" shape="round" expand="block" (click)="openTime()">RoundT <ion-icon
-            style="margin-left: 40px;" name="time-outline"></ion-icon></ion-button>
+        <ion-button class="btntime" shape="round" expand="block" (click)="openTime()">
+          RoundT <ion-icon style="margin-left: 40px;" name="time-outline"></ion-icon>
+        </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
 
+  <!-- Modal for selecting the trip date -->
   <ion-modal [keepContentsMounted]="true" [isOpen]="showDate" (didDismiss)="cancelDate()">
     <ng-template>
       <ion-datetime id="date" presentation="date"></ion-datetime>
     </ng-template>
   </ion-modal>
 
+  <!-- Modal for selecting the trip time -->
   <ion-modal [keepContentsMounted]="true" [isOpen]="showTime" (didDismiss)="cancelTime()">
     <ng-template>
       <ion-datetime id="time" presentation="time"></ion-datetime>
     </ng-template>
   </ion-modal>
 
+  <!-- Button to submit the trip details -->
   <ion-button class="btnsubmit" shape="round" expand="block" routerLink="/one-dub">SUBMIT</ion-button>
 </ion-content>

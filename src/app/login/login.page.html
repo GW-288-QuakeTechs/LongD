@@ -1,55 +1,55 @@
 <ion-content color="primary">
   <img src="assets/logoB.png" alt="Logo">
-  <h1>
-    &nbsp;
-  </h1>
-  <h1>
-    &nbsp;
-  </h1>
-  <h1>
-    &nbsp;
-  </h1>
-  <h1>
-    &nbsp;
-  </h1>
-  <h1>
-    &nbsp;
-  </h1>
+
+  <!-- Empty lines to create vertical space -->
+  <h1>&nbsp;</h1>
+  <h1>&nbsp;</h1>
+  <h1>&nbsp;</h1>
+  <h1>&nbsp;</h1>
+  <h1>&nbsp;</h1>
+
   <ion-card>
     <ion-card-content>
       <form #form="ngForm">
+
+        <!-- Ionic grid for layout -->
         <ion-grid class="ion-no-padding">
           <ion-row color="primary" justify-content-center>
             <ion-col align-self-center size-md="12" size-lg="12" size-xs="12" class="ion-no-padding">
               <div padding>
+
+                <!-- Email input field -->
                 <ion-item color="transparent" class="inputs">
                   <ion-input name="email" type="email" placeholder="Enter your email" id="email" ngModel
                     required></ion-input>
                 </ion-item>
-                <p></p>
+                <p></p> <!-- Empty line for spacing -->
+
+                <!-- Password input field -->
                 <ion-item color="transparent" class="inputs">
                   <ion-input name="password" type="password" placeholder="Enter your password" id="password" ngModel
                     required></ion-input>
                   <ion-icon color="medium" name="eye-off-outline"></ion-icon>
                 </ion-item>
+
               </div>
             </ion-col>
           </ion-row>
         </ion-grid>
       </form>
-      <h1>
-        &nbsp;
-      </h1>
+
+      <!-- Empty lines for vertical spacing -->
+      <h1>&nbsp;</h1>
+
+      <!-- Buttons for login and sign up -->
       <div class="buttons">
         <ion-button class="signin" color="secondary" expand="block" [routerLink]="['/tabs/bookride']">LOGIN</ion-button>
         <ion-button class="signup" color="transparent" expand="block" [routerLink]="['/signup']">or Sign up first time
           user</ion-button>
       </div>
 
-
-      <div class="social-btns">
-
-      </div>
+      <!-- Social buttons (currently empty) -->
+      <div class="social-btns"></div>
     </ion-card-content>
   </ion-card>
 </ion-content>

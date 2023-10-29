@@ -10,11 +10,11 @@ import { OneDubPage } from './one-dub.page';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    OneDubPageRoutingModule
+    CommonModule, // Import CommonModule for common directives and pipes
+    FormsModule, // Import FormsModule for form handling
+    IonicModule, // Import IonicModule for Ionic components and features
+    OneDubPageRoutingModule, // Import the routing module for the OneDubPage
   ],
-  declarations: [OneDubPage]
+  declarations: [OneDubPage] // Declare the OneDubPage component
 })
-export class OneDubPageModule {}
+export class OneDubPageModule {} // Define the module for the OneDubPage

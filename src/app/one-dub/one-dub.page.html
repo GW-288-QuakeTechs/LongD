@@ -1,18 +1,22 @@
 <ion-header>
+  <!-- Header with a back button, title, and add trip button -->
   <ion-toolbar style="height: 90px;" color="primary">
     <ion-grid>
       <ion-row>
         <ion-col size="auto">
+          <!-- Back button -->
           <ion-button size="large" class="backarrow" [routerLink]="['/tabs/bookride']">
             <ion-icon name="arrow-back-outline"></ion-icon>
           </ion-button>
         </ion-col>
         <ion-col size="auto">
           <div class="headertitle">
-            <h6>BOOK A RIDE </h6>
+            <!-- Title -->
+            <h6>BOOK A RIDE</h6>
           </div>
         </ion-col>
         <ion-col size="auto">
+          <!-- Add trip button -->
           <ion-button size="large" class="addtrip" [routerLink]="['/tabs/bookride']">
             <ion-icon name="add-circle"></ion-icon>
           </ion-button>
@@ -23,19 +27,21 @@
 </ion-header>
 
 <ion-content>
-
   <ion-toolbar style="height: 100px; margin-top: 30px;" color="primary">
     <ion-grid>
       <ion-row>
         <ion-col>
+          <!-- Button for OneDub -->
           <ion-button class="one-dub" shape="round" expand="block" routerLink="/one-dub">OneDub</ion-button>
         </ion-col>
         <ion-col>
+          <!-- Button for RoundT -->
           <ion-button class="round-t" shape="round" expand="block" routerLink="/round-t">RoundT</ion-button>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
+          <!-- Back arrow for trip details -->
           <ion-button class="backarrowt">
             <ion-icon name="arrow-back-outline"></ion-icon>
           </ion-button>
@@ -46,6 +52,7 @@
           </ion-label>
         </ion-col>
         <ion-col>
+          <!-- Forward arrow for trip details -->
           <ion-button class="forwardarrow">
             <ion-icon name="arrow-forward-outline"></ion-icon>
           </ion-button>
@@ -53,10 +60,10 @@
       </ion-row>
     </ion-grid>
   </ion-toolbar>
-
   <ion-list>
     <ion-item lines="none" *ngFor="let trip of displayedTrips">
       <ion-thumbnail slot="start">
+        <!-- Thumbnail image -->
         <ion-img src="{{ trip.pics }}"></ion-img>
       </ion-thumbnail>
       <ion-label style="margin-top: -10px; margin-left: -10px;">
@@ -64,16 +71,19 @@
           <ion-row>
             <ion-col size="auto">
               <div class="name">
+                <!-- Driver's name -->
                 <h2>{{ trip.driver }} </h2>
               </div>
             </ion-col>
             <ion-col size="auto">
               <div class="nooftrips">
+                <!-- Number of trips -->
                 <h2>{{ trip.nooftrips }} Trips</h2>
               </div>
             </ion-col>
             <ion-col size="auto">
               <div class="rating">
+                <!-- Driver's rating -->
                 <h2>{{ trip.rating }} </h2>
               </div>
             </ion-col>
@@ -98,6 +108,7 @@
               <ion-item class="itemcar" lines="none">
                 <ion-button class="cartype" routerLink="/vehicledetails">
                   <ion-img slot="start" class="caricon" src="{{ trip.cartypeicon }}"></ion-img>
+                  <!-- Car type -->
                   <h2 class="cartypetext">
                     {{ trip.cartype }}
                   </h2>
@@ -111,9 +122,11 @@
                 <ion-icon name="calendar-clear-outline"></ion-icon>
               </ion-col>
               <ion-col>
+                <!-- Trip date -->
                 <h2 class="date">{{ trip.date }}</h2>
               </ion-col>
               <ion-col>
+                <!-- Trip time -->
                 <h2 class="time">{{ trip.time }} Departure</h2>
               </ion-col>
             </ion-item>
@@ -124,6 +137,7 @@
                 <ion-icon name="location-outline"></ion-icon>
               </ion-col>
               <ion-col>
+                <!-- Trip location -->
                 <h2 class="location">{{ trip.location }}</h2>
               </ion-col>
             </ion-item>
